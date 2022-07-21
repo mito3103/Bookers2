@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers2</title>
+    <title>Bookers2ver2</title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -29,7 +29,7 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Home", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+              <%= link_to "Home", root_path,  class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
               <%= link_to 'Users', user_path(current_user.id), class: 'nav-link text-light' %>
@@ -41,10 +41,10 @@
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
             <% else %>
             <li class="nav-item">
-              <%= link_to "Home", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+              <%= link_to "Home", root_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to "About", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+              <%= link_to "About", homes_about_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
               <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light' %>
