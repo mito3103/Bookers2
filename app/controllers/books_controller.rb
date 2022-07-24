@@ -3,6 +3,8 @@ class BooksController < ApplicationController
   end
 
   def index
+    @user = current_user
+    @profile_image = @user.profile_image
   end
 
   def show
