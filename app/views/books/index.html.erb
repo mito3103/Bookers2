@@ -1,3 +1,4 @@
+
 <h1>User info</h1>
    <% if @profile_image.attached? %>
      <%= image_tag get_profile_image,size:"200×200" %>
@@ -11,7 +12,10 @@ name
 <h3><%= @user.introduction %></h3>
 
 
-<%= button_to "koko", edit_user_path(@user) %>
+
+<%= button_to  edit_user_path(@user), method:  :post do %>
+  <i class="fa-solid fa-user-gear"></i>
+<% end %>
 
 
 
