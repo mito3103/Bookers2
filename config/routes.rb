@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show, :edit]
+  post '/users/1/edit' => 'users#edit'
 
   resources :books, only: [:new, :index, :show, :destroy]
 
