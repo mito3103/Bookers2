@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     @user = current_user
     @profile_image = @user.profile_image
     @book = Book.new
+    @books = Book.all
   end
 
   def create
@@ -26,5 +27,4 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body)
   end
-
 end
