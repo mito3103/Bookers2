@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show, :edit]
-  post '/users/1/edit' => 'users#edit'
+  post '/users/:id/edit' => 'users#edit'
+
 
   resources :books, only: [:new, :index, :show, :destroy]
+  post 'books/' => 'books#create'
 
   get 'homes/top'
   get 'homes/about'
