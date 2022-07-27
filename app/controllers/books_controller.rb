@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @user = current_user
     @profile_image = @user.profile_image
     @book = Book.new
-    @books = Book.all
+    @books = Book.find(params[:id])
   end
 
   def create
@@ -25,7 +25,11 @@ class BooksController < ApplicationController
 
 
   def destroy
+    @books = Book.find(params[:id])
+    @books.destroy
+    redirect_to '/books'
   end
+
 
   private
 

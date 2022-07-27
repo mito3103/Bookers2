@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/users/:id/edit' => 'users#edit'
 
 
-  resources :books, only: [:new, :index, :show, :destroy]
+  resources :books, only: [:new, :index, :show, :destroy, :edit]
   post 'books/' => 'books#create'
 
   get 'homes/top'
