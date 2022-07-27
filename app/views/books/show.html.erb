@@ -8,12 +8,13 @@
 <tbody>
   <tr>
     <td><%= image_tag @books.user.get_profile_image %></td>
-    <td><%= @books.title %></td>
+    <td><%= link_to @books.title,book_path(@books) %></td>
     <td><%= @books.body %></td>
     <td>
       <% if @books.user == current_user %>
-        <%= button_to 'Edit' ,{controller:'books',action:'edit'} , {method: :get}%></td>
+        <%= button_to 'Edit' ,{controller:'books',action:'edit'} , {method: :get}%>
       <% end %>
+    </td>
     <td>
       <% if @books.user == current_user %>
         <%= button_to "Destroy", book_path(@books), method: :delete %>
@@ -25,5 +26,6 @@
 </table>
       </div>
   </div>
+</div>
 </div>
 </div>
