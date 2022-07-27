@@ -9,6 +9,13 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  def show
+    @user = current_user
+    @profile_image = @user.profile_image
+    @book = Book.new
+    @books = Book.all
+  end
+
   def create
     book = Book.new(book_params)
     book.user_id = current_user.id
@@ -16,8 +23,6 @@ class BooksController < ApplicationController
     redirect_to book_path(book.id)
   end
 
-  def show
-  end
 
   def destroy
   end
