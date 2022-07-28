@@ -7,7 +7,10 @@
 
 <tbody>
   <tr>
-    <td><%= image_tag @books.user.get_profile_image %></td>
+    <td>
+      <%= image_tag @books.user.get_profile_image %><br>
+      <%= link_to @books.user.name,user_path  %>
+    </td>
     <td><%= link_to @books.title,book_path(@books) %></td>
     <td><%= @books.body %></td>
     <td>
@@ -20,6 +23,7 @@
         <%= button_to "Destroy", book_path(@books), method: :delete %>
       <% end %>
     </td>
+
   </tr>
 </tbody>
 
