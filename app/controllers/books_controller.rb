@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     @profile_image = @user.profile_image
     @book = Book.new
     @books = Book.find(params[:id])

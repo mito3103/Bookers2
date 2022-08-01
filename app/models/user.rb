@@ -13,8 +13,12 @@ class User < ApplicationRecord
       profile_image
   end
 
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+ 
+
 end
 
 
