@@ -8,7 +8,7 @@
 <%= form_with model: @user,method: :patch do |f| %>
   <div class="form-group">
     <%= f.label :Name %><br>
-    <%= f.text_field :title,value: @users.name,:class=>"form-control Name" %>
+    <%= f.text_field :name,value: @users.name,:class=>"form-control Name" %>
   </div>
 
 
@@ -19,7 +19,7 @@
 
   <div class="form-group">
       <%= f.label :Introduction %><br>
-      <%= f.text_area :body, :class=>"form-control introduction"%>
+      <%= f.text_area :introduction, :class=>"form-control Introduction"%>
   </div>
 
   <div class="form-group">

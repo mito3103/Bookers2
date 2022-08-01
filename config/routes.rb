@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'users/registrations',sessions: 'users/sessions' }
 
   resources :users, only: [:show, :edit, :index, :update]
   post '/users/:id/edit' => 'users#edit'
