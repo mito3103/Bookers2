@@ -3,24 +3,27 @@ class BooksController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @profile_image = @user.profile_image
     @book = Book.new
     @books = Book.all
+    @profile_image = current_user.profile_image
+    @name = current_user.name
+    @intro = current_user.introduction
   end
 
   def show
-    @user = User.find(params[:id])
-    @profile_image = @user.profile_image
     @book = Book.new
     @books = Book.find(params[:id])
+    @profile_image = @books.user.profile_image
+    @name = @books.user.name
+    @intro = @books.user.introduction
   end
 
   def create
     book = Book.new(book_params)
     book.user_id = current_user.id
     book.save
-    redirect_to book_path(book.id)
+      flash[:notice] = "You have created book successfully."
+      redirect_to book_path(book)
   end
 
   def edit
@@ -30,6 +33,7 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
+    flash[:notice] = "You have updated book successfully."
     redirect_to book_path()
   end
 

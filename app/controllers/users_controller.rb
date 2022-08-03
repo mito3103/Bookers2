@@ -3,18 +3,21 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @profile_image = @user.profile_image
     @book = Book.new
-    @books = Book.all
+    @profile_image = current_user.profile_image
+    @name = current_user.name
+    @intro = current_user.introduction
     @users = User.all
   end
 
   def show
-    @user = current_user
-    @profile_image = @user.profile_image
     @book = Book.new
-    @books = Book.all
+    #@books = Book.find(params[:id])
+    @user = User.find(params[:id])
+    @books = @user.books
+    @profile_image = @user.profile_image
+    @name = @user.name
+    @intro = @user.introduction
   end
 
   def edit
