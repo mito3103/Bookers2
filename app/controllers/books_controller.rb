@@ -8,6 +8,7 @@ class BooksController < ApplicationController
     @profile_image = current_user.profile_image
     @name = current_user.name
     @intro = current_user.introduction
+    @user = current_user
   end
 
   def show
@@ -16,6 +17,7 @@ class BooksController < ApplicationController
     @profile_image = @books.user.profile_image
     @name = @books.user.name
     @intro = @books.user.introduction
+    @user = current_user
   end
 
   def create

@@ -8,12 +8,14 @@ class UsersController < ApplicationController
     @name = current_user.name
     @intro = current_user.introduction
     @users = User.all
+    @user = current_user
   end
 
   def show
     @book = Book.new
     #@books = Book.find(params[:id])
     @user = User.find(params[:id])
+    #@user = current_user
     @books = @user.books
     @profile_image = @user.profile_image
     @name = @user.name
