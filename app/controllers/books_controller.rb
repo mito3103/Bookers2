@@ -21,11 +21,19 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
-    book.user_id = current_user.id
-    book.save
+    @profile_image = current_user.profile_image
+    @name = current_user.name
+    @intro = current_user.introduction
+    @user = current_user
+    @books = Book.all
+    @book = Book.new(book_params)
+    @book.user_id = current_user.id
+    if @book.save
       flash[:notice] = "You have created book successfully."
       redirect_to book_path(book)
+    else
+      render :index
+    end
   end
 
   def edit
