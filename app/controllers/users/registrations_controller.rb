@@ -4,9 +4,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  def after_update_path_for(resource)
-    user_path(current_user.id)
-  end
+  
+
+
 
   # GET /resource/sign_up
   # def new
@@ -19,14 +19,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
+   #def edit
+
   #   super
-  # end
+   #end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  #def update
+  #super
+  #end
+
+ #def update
+      #@user = User.new
+      #@users = current_user
+ #end
 
   # DELETE /resource
   # def destroy

@@ -20,20 +20,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
- def update_with_password(params, *options)
+   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
     if params[:password].blank?
-        params.delete(:password)
-        params.delete(:password_confirmation) if params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
     end
 
-    result = update(params, *options)
-
     clean_up_passwords
-    result
- end
-
+    update_attributes(params, *options)
+   end
 end
 
 
