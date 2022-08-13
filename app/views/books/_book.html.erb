@@ -26,11 +26,10 @@
 </table>
 
 <div class="row">
-<%= button_to  edit_user_path(user), method:  :post do %>
- <i class="fa-solid fa-user-gear"></i>
+<%= link_to  edit_user_path(user), class: 'btn btn-outline-secondary btn-block' do %>
+<i class="fas fa-user-cog"></i>
 <% end %>
 </div>
-
 
 
 <h2 class="mt-3">New Book</h2>

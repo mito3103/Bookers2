@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.new
+    @user = User.find(params[:id])
     @users = current_user
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
-      @user = User.new
+      #@user = User.find(params[:id])
       @users = current_user
       render :edit
     end
