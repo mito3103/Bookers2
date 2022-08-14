@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   post 'books/' => 'books#create'
 
 
-  get 'homes/top'
-  get 'homes/about'
+  get 'home/' => 'homes#top'
+  get 'home/about' =>'homes#about'
 
   root to: 'homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
