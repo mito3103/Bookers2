@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-3">
 
-<h1>User info</h1>
+<h2>User info</h2>
    <% if profile_image.attached? %>
      <%= image_tag profile_image,size:"200×200" %>
    <% else %>
@@ -20,6 +20,7 @@
     </tr>
     <tr>
       <th>introduction</th>
+      <th></th>
       <th><%= intro %></th>
     </tr>
   </tbody>
