@@ -19,13 +19,13 @@
     <td><%= @books.body %></td>
     <td>
       <% if @books.user == current_user %>
-        <%= button_to 'Edit' ,{controller:'books',action:'edit'} , {method: :get,class: "btn btn-sm btn-success"}%>
+        <%= link_to "Edit",edit_book_path(@books.id)  ,class: "btn btn-sm btn-success"  %>
       <% end %>
     </td>
 
     <td>
       <% if @books.user == current_user %>
-        <%= button_to "Destroy", book_path(@books), method: :delete,class: "btn  btn-sm btn-danger" %>
+        <%= link_to "Destroy", book_path, method: :delete,class: "btn  btn-sm btn-danger" %>
       <% end %>
     </td>
 
